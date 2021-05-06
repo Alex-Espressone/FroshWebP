@@ -43,6 +43,6 @@
         <source sizes="{$itemSize}" srcset="{$srcSet}">
 
         {* Fallback *}
-        <img src="{$baseSource}" {if $retinaBaseSource}srcset="{$retinaBaseSource} 2x"{/if} class="banner--image-src"{if $Data.title} alt="{$Data.title|escape}"{/if} />
+        <img loading="auto" src="{$baseSource}" {if $retinaBaseSource}srcset="{$retinaBaseSource} 2x"{/if} class="banner--image-src"{if $Data.title} alt="{$Data.title|escape}"{/if} />
     </picture>
 {/block}

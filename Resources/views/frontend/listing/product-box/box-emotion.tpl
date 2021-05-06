@@ -60,15 +60,15 @@
             <source sizes="{$itemSize}" srcset="{$srcSet}"/>
 
 
-            {if isset($sArticle.image.thumbnails[0].webp)}
-                <source srcset="{$sArticle.image.thumbnails[0].webp.source}" type="image/webp"/>
-            {/if}
-            <img loading="lazy" src="{$sArticle.image.thumbnails[0].source}" alt="{$desc|strip_tags|truncate:160}"/>
+    {if isset($sArticle.image.thumbnails[0].webp)}
+        <source srcset="{$sArticle.image.thumbnails[0].webp.source}" type="image/webp"/>
+    {/if}
+        <img loading="lazy" src="{$sArticle.image.thumbnails[0].source}" alt="{$desc|strip_tags|truncate:160}"/>
 
         </picture>
     {elseif $sArticle.image.source}
         <source srcset="{$sArticle.image.webp.source}" type="image/webp"/>
-        <img src="{$sArticle.image.source}" alt="{$desc|strip_tags|truncate:160}"/>
+        <img loading="auto" src="{$sArticle.image.source}" alt="{$desc|strip_tags|truncate:160}"/>
     {else}
         <img loading="lazy" src="{link file='frontend/_public/src/img/no-picture.jpg'}"
              alt="{$desc|strip_tags|truncate:160}"/>
